@@ -2,7 +2,7 @@ This is the log fo this project
 
 # 05-19
 
-Presentation about the concrete idea
+Presentation about the concrete idea: the yellow building with windows
 
 # 05-07
 
