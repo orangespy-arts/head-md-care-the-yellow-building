@@ -1,0 +1,17 @@
+# Obsidian workspace state (per-device, not worth syncing)
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspaces.json
+.obsidian/graph.json
+.obsidian/cache
+
+# Obsidian trash
+.trash/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Plugin data that is device-specific
+.obsidian/plugins/obsidian-git/data.json
