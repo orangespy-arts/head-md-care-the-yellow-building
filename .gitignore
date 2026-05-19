@@ -4,6 +4,7 @@
 .obsidian/workspaces.json
 .obsidian/graph.json
 .obsidian/cache
+logs/.obsidian/
 
 # Obsidian trash
 .trash/
