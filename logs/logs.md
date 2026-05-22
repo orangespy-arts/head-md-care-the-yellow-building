@@ -1,4 +1,12 @@
 This is the log fo this project
+# 05-22
+Greybox interaction, scripts writing
+
+# 05-21
+Grey box modeling2
+
+# 05-20
+Grey box modeling
 
 # 05-19
 
