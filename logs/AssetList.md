@@ -1,7 +1,7 @@
 # Asset list
 
 ## Room assets
-
+```
 Hierarchy
 ├──RoomA1/
 ├──RoomA2/
@@ -63,11 +63,15 @@ Assets/
         ├──CoupleComplain2
         ├──CoupleTalk1.2(After complain)
         ├──CoupleTalk2.2
-│  
+  
 ├──Materials/
 
 │  
 ├──Models/
+    ├──Building
+        ├──Windows
+        ├──Wall
+
     ├──RoomA1/
         ├──People/
             ├──ToiletMan
@@ -132,6 +136,8 @@ Assets/
             ├──Lamp
             ├──Painting
 
+
+
 ├──Scenes/
 │  ├──YellowBuilding
 
@@ -181,6 +187,6 @@ Assets/
         (no script, but interact with RoomC3)
     └──RoomC3/
         Complain(Click this window, the couple compain the dancing people, then -2 persons in RoomC2, music become quieter till the end 0 music, after 10s reset everything)
-
+```
 
 
