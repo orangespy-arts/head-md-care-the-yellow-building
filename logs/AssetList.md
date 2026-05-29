@@ -71,7 +71,6 @@ Assets/
         ├──Windows
         ├──Wall
         ├──Rooms
-
     ├──RoomA1/
         ├──People/
             ├──ToiletMan
@@ -80,7 +79,6 @@ Assets/
             ├──ToiletPaper
             ├──Mirror
             ├──Lavabo
-   
     ├──RoomA2/
         ├──People/
             ├──WorkMan
@@ -94,13 +92,11 @@ Assets/
             ├──DeskLamp
             ├──BookShelf
             ├──Chair
-
     ├──RoomA3/
         ├──Furniture/
             ├──Sofa
             ├──Table
             ├──Plants
-
     ├──RoomB1/
         ├──People/
             ├──Kid
@@ -110,8 +106,6 @@ Assets/
             ├──PuzzleGame
             ├──Carpet
             ├──PackageBoxes
-        
-
     ├──RoomB2/
         ├──People/
             ├──OldWoman
@@ -120,7 +114,6 @@ Assets/
             ├──Phone
             ├──PlantsOutWindow
             ├──CatFood
-
     ├──RoomB3/
     ├──RoomC1/
         ├──PackageBoxes
@@ -135,8 +128,6 @@ Assets/
             ├──Bed
             ├──Lamp
             ├──Painting
-
-
 
 ├──Scenes/
 │  ├──YellowBuilding
