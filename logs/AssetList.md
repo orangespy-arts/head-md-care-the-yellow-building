@@ -65,12 +65,12 @@ Assets/
         ├──CoupleTalk2.2
   
 ├──Materials/
-
-│  
+  
 ├──Models/
     ├──Building
         ├──Windows
         ├──Wall
+        ├──Rooms
 
     ├──RoomA1/
         ├──People/
