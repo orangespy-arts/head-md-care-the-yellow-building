@@ -39,7 +39,7 @@ Presented the concrete interaction concept: the window as the primary narrative 
 Developed the narrative framework and project intentions. Defined the protagonist Augustin as a genderless, ageless persona embodying collective memory. Established the main plot: the last day before demolition, in which the inhabitant performs everyday rituals of care knowing everything will disappear. Brainstormed interaction concepts around fragmented memory, objects as carriers of time, and the relationship between bodily routine and place. Finalized the project title in both English and French.
 
 Relevant files:
-- [05-07-Intentions](https://www.notion.so/05-07-Intentions-359992e01f9d8040a0b4f60b783c45cc?pvs=21)
+- [05-07-Intentions](https://github.com/orangespy-arts/head-md-care-the-yellow-building/blob/main/logs/Intentions.md)
 
 ## 05-06
 Conducted field interviews with people in front of the yellow building, including the owner of a nearby restaurant. The interviews revealed a contrast between temporary occupants and long-term residents: the restaurant owner expressed indifference to the demolition, noting he could easily relocate his business, while acknowledging that the actual inhabitants of the building would face serious difficulties. This distinction between those with mobility and those without became a key thematic reference point for the project.
