@@ -1,47 +1,54 @@
-This is the log fo this project
-# 05-22
-Greybox interaction, scripts writing
+# Development Log — The Yellow Building
 
-# 05-21
-Grey box modeling2
+This log documents the key milestones and decision points in the development of the project. Each entry reflects a significant moment in the conceptual, narrative, or technical progression of the work.
 
-# 05-20
-Grey box modeling
+## 05-29
+Created a comprehensive asset list and established the final project folder structure in Unity. The asset list covers all nine rooms and includes 3D models for characters and furniture, animation sequences for each interactive character, sound assets, text assets, and interaction scripts. In total the project requires models for six distinct character types, over thirty animation states, multiple sound layers per room, and a set of cross-room interaction dependencies. This session translated the production document from 05-25 into a concrete development plan and defined the remaining workload for the production phase.
 
-# 05-19
+Relevant files:
+- [Asset List](https://github.com/orangespy-arts/head-md-care-the-yellow-building/blob/main/logs/AssetList.md)
+- [Final Project](https://github.com/orangespy-arts/head-md-care-the-yellow-building/blob/main/unity/FinalYellowBuilding)
 
-Presentation about the concrete idea: the yellow building with windows
+## 05-25
+Developed the full narrative production document for all nine apartments. Each room was given a distinct resident persona, emotional state, and a sequence of up to five actions that unfold over time, ending with a departure that reflects a different relationship to loss and displacement. The nine stories range from a mechanic who left without a word, to a 78-year-old woman who has lived there her entire life. The document also established cross-room narrative connections, for example the relationship between the translator in Room 1 and the elderly resident in Room 5, and the musician in Room 6 whose party affects the lawyer and bookseller in Room 3. This session translated the earlier conceptual and interaction work into a concrete production framework for the remaining development.
 
-# 05-07
+Relevant files:
+- [yellow_building_production_en.pdf](https://github.com/orangespy-arts/head-md-care-the-yellow-building/blob/main/media/yellow_building_production_en.pdf)
 
-We decide the title, context, persona, plot of this project.
+## 05-22
+Developed and implemented the interaction scripts for each of the nine rooms. Each window responds independently to player input while some rooms are interconnected, creating a sense of a living building where actions in one space affect another. The scripts include:
 
-[05-07-Intentions](https://www.notion.so/05-07-Intentions-359992e01f9d8040a0b4f60b783c45cc?pvs=21) 
+- **RoomA1:** Clicking the window triggers a sound reaction and closes the window.
+- **RoomA2:** Repeated clicks progressively affect the worker's behavior, culminating in a text-based emotional response before resetting.
+- **RoomA3:** Clicking the cat triggers a movement animation across windows, with the cat eventually eating at the B2 balcony.
+- **RoomB1:** Clicking reveals a child's random gestures, followed by the appearance of moving boxes suggesting departure.
+- **RoomB2:** Clicking triggers a phone conversation in sequence, playing podcast audio across three stages.
+- **RoomC2/C3:** Clicking RoomC3 causes the couple to react to the dancing in RoomC2, progressively reducing the number of people and lowering the music volume until silence, then resetting after 10 seconds.
 
-# 05-06
+This session established the core interactive logic of the project and defined the relationship between individual rooms and the building as a whole.
 
-Interview the restaurant in front of the YB
+## 05-20 to 05-21
+Built the greybox model of the yellow building, including both the exterior facade and interior spaces. The facade is structured as a 3x3 grid of nine windows, each representing a different resident: an elderly person, a child, a young adult, a couple, a pet owner, and an already-vacated empty room, among others. This diversity was intentional, reflecting how demolition and displacement affect people across different social backgrounds, ages, and life situations. Interior spaces were also roughed out to support the interaction logic developed in the following session.
 
-[05-06-Interview&Drawing](https://www.notion.so/05-06-Interview-Drawing-359992e01f9d808398d0fffb1d0f6c8a?pvs=21) 
+- [GreyBoxing](https://github.com/orangespy-arts/head-md-care-the-yellow-building/tree/main/unity/GreyBoxing)
 
-# 04-30
+## 05-19
+Presented the concrete interaction concept: the window as the primary narrative device. Drawing from the autoethnographic method established earlier, the "window" represents the subjective viewpoint of the narrator, looking out from their own apartment toward the yellow building opposite. Each window of the yellow building becomes a portal into a different resident's story and memory. This framing allows the audience to inhabit a specific perspective rather than observe from a neutral distance, reinforcing the personal and intimate tone of the project.
 
-Narrative 
+## 05-07
+Developed the narrative framework and project intentions. Defined the protagonist Augustin as a genderless, ageless persona embodying collective memory. Established the main plot: the last day before demolition, in which the inhabitant performs everyday rituals of care knowing everything will disappear. Brainstormed interaction concepts around fragmented memory, objects as carriers of time, and the relationship between bodily routine and place. Finalized the project title in both English and French.
 
-# 04-29
+Relevant files:
+- [05-07-Intentions](https://www.notion.so/05-07-Intentions-359992e01f9d8040a0b4f60b783c45cc?pvs=21)
 
-Brief reading, choose the 「yellow building in front of my house」，which is the builiding will be destroyed. 
+## 05-06
+Conducted field interviews with people in front of the yellow building, including the owner of a nearby restaurant. The interviews revealed a contrast between temporary occupants and long-term residents: the restaurant owner expressed indifference to the demolition, noting he could easily relocate his business, while acknowledging that the actual inhabitants of the building would face serious difficulties. This distinction between those with mobility and those without became a key thematic reference point for the project.
 
-## Respond to brief
+Relevant files:
+- [05-06-Interview&Drawing](https://www.notion.so/05-06-Interview-Drawing-359992e01f9d808398d0fffb1d0f6c8a?pvs=21)
 
-Care about the building itself? And care about the people live in this building?
+## 04-30
+Discussed narrative strategy for the project: how to introduce social and political themes around urban demolition and displacement through a gentle, intimate storytelling approach rather than direct critique. The focus was on finding a tone that allows the audience to arrive at the themes through personal and emotional experience rather than confrontation.
 
-## Method
-
-### Autoethnography
-
-Researchers use their own personal experiences as material for understanding culture, social phenomena, and identity experiences.
-
-### Micro to Macro Analysis
-
-By studying one specific case, it is possible to reveal similar issues in Geneva, and even in wider society.
+## 04-29
+Selected the core subject of the project: an old yellow building facing demolition in Geneva. The choice was motivated by its personal significance and its broader resonance with issues of urban displacement and memory. Defined the central research questions: what happens to the memories embedded in a place when it is destroyed, and can daily rituals serve as a form of preservation? Chose autoethnography as the primary method, using one specific case to reflect on wider patterns of urban change in Geneva and beyond.
