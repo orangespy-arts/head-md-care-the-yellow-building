@@ -2,6 +2,13 @@
 
 This log documents the key milestones and decision points in the development of the project. Each entry reflects a significant moment in the conceptual, narrative, or technical progression of the work.
 
+## 06-01
+Today we moved faster than [planned v1](logs\Production-plan-v1.md1)  — rigging was completed a full day ahead of schedule, the entire production pipeline shifted forward by one day. The main breakthrough was establishing a new character workflow using Nano Banana and Meshy AI, replacing Ready Player Me, which resulted in all 15 character models being generated, rigged, and validated in Unity in a single day. Lisa also exceeded her plan, completing furniture placement for four rooms and producing the full UX flow documentation. The key strategic decision was to replace Perception Neuron motion capture entirely with DeepMotion Animate 3D and Meshy AI's animation library, simplifying the pipeline and freeing up June 3. So we make the [Production plan v2](logs\Production-plan-v2.md)
+
+Details:
+- [Production Log 06-01](logs\ProductionLog-06-01.md)
+- [Moodboard](media\MoodBoardYellowBuilding.pdf)
+
 ## 05-29
 Created a comprehensive asset list and established the final project folder structure in Unity. The asset list covers all nine rooms and includes 3D models for characters and furniture, animation sequences for each interactive character, sound assets, text assets, and interaction scripts. In total the project requires models for six distinct character types, over thirty animation states, multiple sound layers per room, and a set of cross-room interaction dependencies. This session translated the production document from 05-25 into a concrete development plan and defined the remaining workload for the production phase.
 
