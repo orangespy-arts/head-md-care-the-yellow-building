@@ -20,8 +20,8 @@ Assets/
     ├──RoomA1/
         ├──WindowOpen
         ├──WindowClose
-        ├──SitOnToilet
-        ├──PeopleCloseWindow
+        ├──SitOnToilet(done)
+        ├──PeopleCloseWindow(done)
     ├──RoomA2/
         ├──FocusOnComputer
         ├──HandsPutUnderFaceThinking
@@ -35,7 +35,7 @@ Assets/
         ├──KidUpRightWindow
         ├──KidUpLeftWindow
     ├──RoomB2/
-        ├──OldWomanSit
+        ├──OldWomanSit(Film done)
         ├──OldWomanTalkPhone1
         ├──OldWomanTalkPhone2
         ├──OldWomanTalkPhone3

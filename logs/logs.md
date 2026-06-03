@@ -2,6 +2,13 @@
 
 This log documents the key milestones and decision points in the development of the project. Each entry reflects a significant moment in the conceptual, narrative, or technical progression of the work.
 
+## 06-02
+**06-02**
+Ahead of schedule again. All 15 character models were imported into Unity with Humanoid Rig configured, and motion capture recordings were completed for RoomA1, A2, B1, B2, C2, and C3, covering 23 animation states in a single day. Lisa participated in the RoomC3 recording session and completed model import and furniture placement for RoomB1, RoomB3, and RoomC3, along with updated window models across the facade. Key design decisions included simplifying RoomB2 to a single looping phone animation, switching to DeepMotion standard models for better Unity Humanoid compatibility, and omitting finger grip animation due to model rig limitations. Dance animations remain the only pending item for June 3. Updated to [Production Plan v3](logs\Production-plan-v3.md).
+
+Details:
+- [Production Log 06-02](logs\ProductionLog-06-02.md)
+
 ## 06-01
 Today we moved faster than [planned v1](logs\Production-plan-v1.md1)  — rigging was completed a full day ahead of schedule, the entire production pipeline shifted forward by one day. The main breakthrough was establishing a new character workflow using Nano Banana and Meshy AI, replacing Ready Player Me, which resulted in all 15 character models being generated, rigged, and validated in Unity in a single day. Lisa also exceeded her plan, completing furniture placement for four rooms and producing the full UX flow documentation. The key strategic decision was to replace Perception Neuron motion capture entirely with DeepMotion Animate 3D and Meshy AI's animation library, simplifying the pipeline and freeing up June 3. So we make the [Production plan v2](logs\Production-plan-v2.md)
 
