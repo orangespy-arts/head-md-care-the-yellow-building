@@ -2,6 +2,14 @@
 
 This log documents the key milestones and decision points in the development of the project. Each entry reflects a significant moment in the conceptual, narrative, or technical progression of the work.
 
+## 06-03
+06-03
+Ahead of schedule again. All animations were trimmed, renamed, and organized into Unity folders across all rooms. The RoomC2 dancer pipeline was completed in full — animation binding, material application, and duplication to nine dancers. The opposing building view (the opening scene apartment) was built by Lisa, along with furniture placement for RoomA3 and RoomC2. The full interaction system architecture was finalized (GameManager, CameraController, ClickDetector, per-room Interactables), and the narrative structure confirmed: two entry modes triggered by the glass of water or the cat, converging on the same room interactions and ending. Ready to begin scripting on June 4. Updated to [Production Plan v4](logs\Production-plan-v4.md).
+
+Details:
+
+[Production Log 06-03](logs\ProductionLog-06-03.md)
+
 ## 06-02
 **06-02**
 Ahead of schedule again. All 15 character models were imported into Unity with Humanoid Rig configured, and motion capture recordings were completed for RoomA1, A2, B1, B2, C2, and C3, covering 23 animation states in a single day. Lisa participated in the RoomC3 recording session and completed model import and furniture placement for RoomB1, RoomB3, and RoomC3, along with updated window models across the facade. Key design decisions included simplifying RoomB2 to a single looping phone animation, switching to DeepMotion standard models for better Unity Humanoid compatibility, and omitting finger grip animation due to model rig limitations. Dance animations remain the only pending item for June 3. Updated to [Production Plan v3](logs\Production-plan-v3.md).
