@@ -2,8 +2,21 @@
 
 This log documents the key milestones and decision points in the development of the project. Each entry reflects a significant moment in the conceptual, narrative, or technical progression of the work.
 
+
+## 06-0809
+
+C3/C2 rooms completed and A3 cat begun. RoomC3 (Couple) uses two synchronized Animator Controllers triggered on the same frame, with a simplified single-loop idle state replacing the original three-clip Talk cycle. Two clicks complete the room: the first plays Wait/Complain, the second plays Complain/Wait, then locks. RoomC2 dancer-reduction linkage implemented with public Inspector-assigned arrays and adjustable timing parameters; dancers disappear one by one starting at a configurable point in the complaint animation (SetActive for now, fade-out deferred until Toon Shader is configured). A3 cat redesigned from an interactive object into a screensaver trigger: after a period of no input the cat jumps autonomously between balconies on a 3x3 grid while the camera pushes in to reveal room detail, with any click exiting back to normal mode. Jump loop logic is written with legal-neighbor validation (column must change, row difference at most one, no straight vertical jumps), but the cat's position and orientation after teleporting to a balcony are currently broken and carry over to June 10. Lisa completed scene assembly for all nine rooms and built the C3 banner model. Gold is no longer available; text assets move to zhanlan and audio to lisa. Updated to [Production Plan v6](logs/Production-plan-v6.md).
+
+Details:
+
+[Production Log 06-0809](logs\ProductionLog-06-0809.md)
+
 ## 06-0405
 Four rooms scripted and working over the past two days (A1, A2, B1, B2), and two reusable interaction patterns validated for the rooms still to come. RoomA2 (WorkMan) established the first pattern — random idle looping with a click-triggered one-shot action (AnyState plus a bool) — and surfaced a full set of Animator and coroutine pitfalls that are now documented (Can Transition To Self, Loop Time breaking normalizedTime, redundant conditions, bool clearing timing, the click trio). RoomB1 (Boy) and RoomB2 (OldWoman) established the second pattern for sequence-type rooms, chaining states directly with Has Exit Time. RoomA1 (ToiletMan) used an Animation Event to link the character's scream animation to the window's separate closing animation. Began migrating the finished rooms from GreyBoxing into the Final project; idle plays correctly but clicking does not yet work after migration — suspected Input System module or Physics Raycaster Event Mask, deferred until Lisa's scene exists since characters will be repositioned. Remaining: A3 (the cat) and the C3/C2 linkage, plus the still-unwritten Core trio. Updated to [Production Plan v5](logs\Production-plan-v5.md).
+
+Details:
+
+[Production Log 06-0405](logs\ProductionLog-06-0405.md)
 
 ## 06-03
 Ahead of schedule again. All animations were trimmed, renamed, and organized into Unity folders across all rooms. The RoomC2 dancer pipeline was completed in full — animation binding, material application, and duplication to nine dancers. The opposing building view (the opening scene apartment) was built by Lisa, along with furniture placement for RoomA3 and RoomC2. The full interaction system architecture was finalized (GameManager, CameraController, ClickDetector, per-room Interactables), and the narrative structure confirmed: two entry modes triggered by the glass of water or the cat, converging on the same room interactions and ending. Ready to begin scripting on June 4. Updated to [Production Plan v4](logs\Production-plan-v4.md).
