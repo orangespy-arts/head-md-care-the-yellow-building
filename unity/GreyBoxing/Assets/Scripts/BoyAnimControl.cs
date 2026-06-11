@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class KidBehaviour : MonoBehaviour, IPointerClickHandler, IRoomResettable
+public class KidBehaviour : MonoBehaviour, IPointerClickHandler
 {
     private Animator animator;
     private bool hasCompleted = false;
@@ -15,7 +15,6 @@ public class KidBehaviour : MonoBehaviour, IPointerClickHandler, IRoomResettable
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!GameManager.InteractionEnabled) return;
         if (isPlaying) return;
 
         isPlaying = true;
@@ -42,14 +41,5 @@ public class KidBehaviour : MonoBehaviour, IPointerClickHandler, IRoomResettable
         }
 
         isPlaying = false;
-    }
-
-    public void ResetRoom()
-    {
-        StopAllCoroutines();
-        isPlaying = false;
-        hasCompleted = false;
-        animator.Rebind();
-        animator.Update(0f);
     }
 }

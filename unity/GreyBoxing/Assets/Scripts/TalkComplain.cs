@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class CoupleRoom : MonoBehaviour, IPointerClickHandler, IRoomResettable
+public class CoupleRoom : MonoBehaviour, IPointerClickHandler
 {
     private Animator couple1Animator;
     private Animator couple2Animator;
@@ -24,7 +24,6 @@ public class CoupleRoom : MonoBehaviour, IPointerClickHandler, IRoomResettable
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!GameManager.InteractionEnabled) return;
         Debug.Log("点击触发，clickCount: " + clickCount + " isPlaying: " + isPlaying);
         if (isPlaying) return;
         if (clickCount >= 2) return;
@@ -68,22 +67,5 @@ public class CoupleRoom : MonoBehaviour, IPointerClickHandler, IRoomResettable
 
         Debug.Log("isPlaying 解锁");
         isPlaying = false;
-    }
-
-    public void ResetRoom()
-    {
-        StopAllCoroutines();
-        isPlaying = false;
-        clickCount = 0;
-
-        foreach (GameObject person in batch1)
-            person.SetActive(true);
-        foreach (GameObject person in batch2)
-            person.SetActive(true);
-
-        couple1Animator.Rebind();
-        couple1Animator.Update(0f);
-        couple2Animator.Rebind();
-        couple2Animator.Update(0f);
     }
 }

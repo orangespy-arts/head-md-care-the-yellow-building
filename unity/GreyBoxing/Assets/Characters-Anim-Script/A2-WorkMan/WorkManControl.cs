@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class BotherWorker : MonoBehaviour, IPointerClickHandler, IRoomResettable
+public class BotherWorker : MonoBehaviour, IPointerClickHandler
 {
     private Animator animator;
     private bool hasCompleted = false;
@@ -58,7 +58,6 @@ public class BotherWorker : MonoBehaviour, IPointerClickHandler, IRoomResettable
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!GameManager.InteractionEnabled) return;
         Debug.Log("WorkMan clicked, isAngry=" + isAngry);
         if (isAngry) return;
 
@@ -87,14 +86,4 @@ private IEnumerator AfterAngry()
     animator.SetBool("Angery", false);
     isAngry = false;
 }
-
-    public void ResetRoom()
-    {
-        StopAllCoroutines();
-        isAngry = false;
-        hasCompleted = false;
-        animator.Rebind();
-        animator.Update(0f);
-        StartCoroutine(RandomIdleLoop());
-    }
 }

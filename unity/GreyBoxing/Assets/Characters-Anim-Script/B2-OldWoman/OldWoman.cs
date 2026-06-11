@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class OldWomanTalk : MonoBehaviour, IPointerClickHandler, IRoomResettable
+public class OldWomanTalk : MonoBehaviour, IPointerClickHandler
 {
     private Animator animator;
     private bool hasCompleted = false;
@@ -15,7 +15,6 @@ public class OldWomanTalk : MonoBehaviour, IPointerClickHandler, IRoomResettable
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!GameManager.InteractionEnabled) return;
         if (isPlaying) return;
 
         isPlaying = true;
@@ -40,14 +39,5 @@ public class OldWomanTalk : MonoBehaviour, IPointerClickHandler, IRoomResettable
         }
 
         isPlaying = false;
-    }
-
-    public void ResetRoom()
-    {
-        StopAllCoroutines();
-        isPlaying = false;
-        hasCompleted = false;
-        animator.Rebind();
-        animator.Update(0f);
     }
 }

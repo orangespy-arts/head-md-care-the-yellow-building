@@ -3,14 +3,6 @@
 This log documents the key milestones and decision points in the development of the project. Each entry reflects a significant moment in the conceptual, narrative, or technical progression of the work.
 
 
-## 06-10
-
-The cat system and the Core architecture both came together, leaving all nine rooms interactive in GreyBoxing. The A3 cat's position and orientation bug was fixed (Humanoid rig / Generic clip conflict resolved, orientation driven by a dedicated facingTarget empty), parabolic jump displacement and a landing animation were added, and the cat now drives the screensaver autonomously. The Core system was written end to end: GameManager with a two-mode Default / Screensaver architecture, an IRoomResettable interface that resets every room on exit, and CameraController handling the screensaver push-in plus a smooth, symmetric zoom-out on the way back. All five room scripts were batch-updated to implement IRoomResettable, block interaction during the screensaver, and provide a ResetRoom(). Two screensaver bugs were tracked down and fixed, both rooted in the same surprise: on a laptop, trackpad tap-to-click does not register on the Mouse channel in the new Input System, so neither the exit click nor the idle-reset was firing — switching detection to Pointer.current.press (the common base of Mouse/Pen/Touchscreen) made it a true screensaver that only triggers on genuine idle. Lisa modeled all the exterior planters around the building and authored the building's textures. Updated to [Production Plan v7](logs/Production-plan-v7.md).
-
-Details:
-
-[Production Log 06-10](logs\ProductionLog-06-10.md)
-
 ## 06-0809
 
 C3/C2 rooms completed and A3 cat begun. RoomC3 (Couple) uses two synchronized Animator Controllers triggered on the same frame, with a simplified single-loop idle state replacing the original three-clip Talk cycle. Two clicks complete the room: the first plays Wait/Complain, the second plays Complain/Wait, then locks. RoomC2 dancer-reduction linkage implemented with public Inspector-assigned arrays and adjustable timing parameters; dancers disappear one by one starting at a configurable point in the complaint animation (SetActive for now, fade-out deferred until Toon Shader is configured). A3 cat redesigned from an interactive object into a screensaver trigger: after a period of no input the cat jumps autonomously between balconies on a 3x3 grid while the camera pushes in to reveal room detail, with any click exiting back to normal mode. Jump loop logic is written with legal-neighbor validation (column must change, row difference at most one, no straight vertical jumps), but the cat's position and orientation after teleporting to a balcony are currently broken and carry over to June 10. Lisa completed scene assembly for all nine rooms and built the C3 banner model. Gold is no longer available; text assets move to zhanlan and audio to lisa. Updated to [Production Plan v6](logs/Production-plan-v6.md).

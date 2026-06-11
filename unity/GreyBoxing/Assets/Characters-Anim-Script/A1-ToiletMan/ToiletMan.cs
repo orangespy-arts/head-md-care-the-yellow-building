@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ToiletMan : MonoBehaviour, IPointerClickHandler, IRoomResettable
+public class ToiletMan : MonoBehaviour, IPointerClickHandler
 {
     
    //on click, change animator parameter, opening to true
@@ -17,7 +17,6 @@ public class ToiletMan : MonoBehaviour, IPointerClickHandler, IRoomResettable
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (!GameManager.InteractionEnabled) return;
         isOpen = !isOpen;
         animator.SetBool("Closed", isOpen);
     }
@@ -27,18 +26,5 @@ public class ToiletMan : MonoBehaviour, IPointerClickHandler, IRoomResettable
     {
         isOpen = false;
         windowAnimator.SetBool("Closed", true);
-    }
-
-    public void ResetRoom()
-    {
-        StopAllCoroutines();
-        isOpen = true;
-        animator.Rebind();
-        animator.Update(0f);
-        if (windowAnimator != null)
-        {
-            windowAnimator.Rebind();
-            windowAnimator.Update(0f);
-        }
     }
 }
