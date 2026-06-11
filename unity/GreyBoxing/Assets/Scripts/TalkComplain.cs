@@ -20,6 +20,7 @@ public class CoupleRoom : MonoBehaviour, IPointerClickHandler, IRoomResettable
     {
         couple1Animator = transform.Find("CoupleLeft").GetComponent<Animator>();
         couple2Animator = transform.Find("CoupleRight").GetComponent<Animator>();
+        GameManager.RegisterInteractive("C3");
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -68,6 +69,10 @@ public class CoupleRoom : MonoBehaviour, IPointerClickHandler, IRoomResettable
 
         Debug.Log("isPlaying 解锁");
         isPlaying = false;
+
+        // 两次点击的序列都走完，这个房间才算完成
+        if (clickCount >= 2)
+            GameManager.ReportCompletion("C3");
     }
 
     public void ResetRoom()

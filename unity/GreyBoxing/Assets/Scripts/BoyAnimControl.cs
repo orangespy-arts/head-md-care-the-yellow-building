@@ -11,6 +11,7 @@ public class KidBehaviour : MonoBehaviour, IPointerClickHandler, IRoomResettable
     private void Start()
     {
         animator = GetComponent<Animator>();
+        GameManager.RegisterInteractive("B1");
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -38,7 +39,7 @@ public class KidBehaviour : MonoBehaviour, IPointerClickHandler, IRoomResettable
         if (!hasCompleted)
         {
             hasCompleted = true;
-            // GameManager.Instance?.ReportCompletion("B1");
+            GameManager.ReportCompletion("B1");
         }
 
         isPlaying = false;

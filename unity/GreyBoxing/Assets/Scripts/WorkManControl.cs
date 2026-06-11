@@ -12,6 +12,7 @@ public class BotherWorker : MonoBehaviour, IPointerClickHandler, IRoomResettable
     private void Start()
     {
         animator = GetComponent<Animator>();
+        GameManager.RegisterInteractive("A2");
         StartCoroutine(RandomIdleLoop());
     }
 
@@ -80,7 +81,7 @@ private IEnumerator AfterAngry()
     if (!hasCompleted)
     {
         hasCompleted = true;
-        // GameManager.Instance?.ReportCompletion("A2");
+        GameManager.ReportCompletion("A2");
     }
 
     // 清 bool，配合 04→01 的 Angery==false condition 跳回 idle

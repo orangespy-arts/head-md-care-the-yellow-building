@@ -11,6 +11,7 @@ public class OldWomanTalk : MonoBehaviour, IPointerClickHandler, IRoomResettable
     private void Start()
     {
         animator = GetComponent<Animator>();
+        GameManager.RegisterInteractive("B2");
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -36,7 +37,7 @@ public class OldWomanTalk : MonoBehaviour, IPointerClickHandler, IRoomResettable
         if (!hasCompleted)
         {
             hasCompleted = true;
-            // GameManager.Instance?.ReportCompletion("B2");
+            GameManager.ReportCompletion("B2");
         }
 
         isPlaying = false;

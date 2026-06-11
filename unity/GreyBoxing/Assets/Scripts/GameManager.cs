@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     public static void ReportCompletion(string roomId)
     {
         if (Instance == null || Instance.State != GameState.Interactive) return;
-        Instance.completedRooms.Add(roomId);
+        if (!Instance.completedRooms.Add(roomId)) return; // 重复上报忽略（如 ToiletMan 反复点击）
         Debug.Log($"[GameManager] 房间完成 {roomId}（{Instance.completedRooms.Count}/{Instance.registeredRooms.Count}）");
 
         if (Instance.registeredRooms.Count > 0 &&

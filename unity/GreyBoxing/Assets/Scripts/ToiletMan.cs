@@ -13,6 +13,7 @@ public class ToiletMan : MonoBehaviour, IPointerClickHandler, IRoomResettable
     private void Start()
     {
         animator = GetComponent<Animator>();
+        GameManager.RegisterInteractive("A1");
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -20,6 +21,7 @@ public class ToiletMan : MonoBehaviour, IPointerClickHandler, IRoomResettable
         if (!GameManager.InteractionEnabled) return;
         isOpen = !isOpen;
         animator.SetBool("Closed", isOpen);
+        GameManager.ReportCompletion("A1");
     }
 
     //create public method called CloseWindow, which sets the animator parameter "Closed" to true
