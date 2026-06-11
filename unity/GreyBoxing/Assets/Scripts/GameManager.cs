@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
 
-// 四状态体验循环（阶段1：骨架。State3/State4 为占位，内容在阶段3/4实装）
+// 四状态体验循环（阶段3：Dissolving 已实装，Ending 仍为占位）
 //   Screensaver  相机跟猫，等观众点击（开机默认）
 //   Interactive  九宫格固定机位，房间可交互
-//   Dissolving   房间内容依次消失（占位）
+//   Dissolving   房间内容依次消失 → 猫消失
 //   Ending       zoom out 结尾（占位）→ 重置回 Screensaver
 public enum GameState { Screensaver, Interactive, Dissolving, Ending }
 
@@ -26,8 +26,27 @@ public class GameManager : MonoBehaviour
     public float allCompleteDelay = 3f;
     public bool mouseMoveCountsAsActivity = true;
 
-    [Header("阶段1占位时长（State3/4 实装后删除）")]
-    public float placeholderDissolveSeconds = 2f;
+    [Header("九个房间（拖 empty 父物体，下面放模型；消失顺序 = 数组顺序）")]
+    public GameObject[] rooms = new GameObject[9];
+
+    [Header("State3 消失节奏")]
+    [Tooltip("房间与房间之间的间隔（秒）")]
+    public float roomDissolveInterval = 0.8f;
+    [Tooltip("房间内子物体逐个消失的间隔（秒）")]
+    public float objectInterval = 0.25f;
+    [Tooltip("最后一个房间清空后，到猫消失的停顿")]
+    public float catDisappearDelay = 1f;
+    [Tooltip("猫消失后，到进入 State4 的停顿")]
+    public float afterDissolveHold = 1.5f;
+
+    [Header("引用")]
+    public CatController cat;
+
+    [Header("测试开关（上展前必须关掉）")]
+    [Tooltip("勾上：跳过屏保，Play 直接进 Interactive")]
+    public bool debugSkipScreensaver = false;
+
+    [Header("阶段3占位：State4 时长（阶段4实装后删除）")]
     public float placeholderEndingSeconds = 2f;
 
     public GameState State { get; private set; } = GameState.Screensaver;
@@ -52,9 +71,22 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    // 记录每个子物体的初始 active 状态，循环重置时按原样复原
+    // （比如某些道具本来就是关着的，不能复原成全开）
+    private readonly Dictionary<GameObject, bool> initialActive = new Dictionary<GameObject, bool>();
+
     void Start()
     {
         lastMousePos = Mouse.current != null ? Mouse.current.position.ReadValue() : Vector2.zero;
+
+        foreach (var room in rooms)
+        {
+            if (room == null) continue;
+            foreach (Transform child in room.transform)
+                initialActive[child.gameObject] = child.gameObject.activeSelf;
+        }
+
+        if (debugSkipScreensaver) EnterInteractive();
     }
 
     void Update()
@@ -123,15 +155,25 @@ public class GameManager : MonoBehaviour
         if (State != GameState.Interactive) return; // 防双触发
         State = GameState.Dissolving;
         Debug.Log($"[GameManager] → Dissolving（{reason}）");
-        StartCoroutine(PlaceholderCycle(delay));
+        StartCoroutine(DissolveSequence(delay));
     }
 
-    private IEnumerator PlaceholderCycle(float delay)
+    private IEnumerator DissolveSequence(float delay)
     {
         if (delay > 0f) yield return new WaitForSeconds(delay);
 
-        // TODO 阶段3：逐房间 RoomContents.Disappear() + 猫 Hide()
-        yield return new WaitForSeconds(placeholderDissolveSeconds);
+        // 逐房间消失（顺序 = Inspector 里 rooms 数组顺序，空槽位跳过）
+        // 每个房间自己开协程，房间之间可以重叠消失
+        foreach (var room in rooms)
+        {
+            if (room == null) continue;
+            StartCoroutine(DissolveRoom(room));
+            yield return new WaitForSeconds(roomDissolveInterval);
+        }
+
+        yield return new WaitForSeconds(catDisappearDelay);
+        if (cat != null) cat.Hide();
+        yield return new WaitForSeconds(afterDissolveHold);
 
         State = GameState.Ending;
         Debug.Log("[GameManager] → Ending");
@@ -142,12 +184,52 @@ public class GameManager : MonoBehaviour
         ResetAll();
     }
 
+    // 房间内子物体按层级顺序逐个消失（只动直接子物体；要整组一起消失就把它们包在一个子 empty 里）
+    private IEnumerator DissolveRoom(GameObject room)
+    {
+        if (room.transform.childCount == 0)
+        {
+            Debug.LogWarning($"[GameManager] {room.name} 没有任何子物体！要消失的模型必须放在它下面一层。" +
+                "另外确认拖进 Rooms 的是 Hierarchy 里的场景物体，不是 Project 里的 prefab。");
+            yield break;
+        }
+
+        int hidden = 0;
+        foreach (Transform child in room.transform)
+        {
+            if (child.gameObject.activeSelf)
+            {
+                child.gameObject.SetActive(false);
+                hidden++;
+                yield return new WaitForSeconds(objectInterval);
+            }
+        }
+        Debug.Log($"[GameManager] {room.name} 已清空（隐藏了 {hidden} 个子物体）");
+    }
+
     private void ResetAll()
     {
+        StopAllCoroutines(); // 终止可能还在跑的 DissolveRoom
+
         completedRooms.Clear();
         idleTimer = 0f;
+
+        // 子物体按初始 active 状态复原
+        foreach (var room in rooms)
+        {
+            if (room == null) continue;
+            foreach (Transform child in room.transform)
+            {
+                bool wasActive;
+                child.gameObject.SetActive(
+                    initialActive.TryGetValue(child.gameObject, out wasActive) ? wasActive : true);
+            }
+        }
+
         ResetAllRooms();
-        // TODO 阶段3/4：RoomContents.ResetContents()、猫 ResetCat()、灯光复原
+        if (cat != null) cat.ResetCat();
+        // TODO 阶段4：灯光复原
+
         State = GameState.Screensaver;
         Debug.Log("[GameManager] → Screensaver（循环重置）");
     }

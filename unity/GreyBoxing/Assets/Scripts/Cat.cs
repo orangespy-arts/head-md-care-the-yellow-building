@@ -18,6 +18,7 @@ public class CatController : MonoBehaviour
     public Vector3 positionOffset = Vector3.zero;
 
     private Animator animator;
+    private Renderer[] renderers;
     private int currentIndex = 2;
 
     private int[,] coords = new int[,]
@@ -36,6 +37,7 @@ public class CatController : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        renderers = GetComponentsInChildren<Renderer>(true);
         currentIndex = 2;
         transform.position = balconies[currentIndex].position + positionOffset;
         FaceTarget();
@@ -104,5 +106,31 @@ public class CatController : MonoBehaviour
             transform.position = endPos;
             FaceTarget();
         }
+    }
+
+    // ---- 以下由 GameManager 在 State3 / 循环重置时调用 ----
+
+    // State3 末尾：猫消失（停跳 + 隐藏渲染，不 SetActive 以便协程控制权保留在这里）
+    public void Hide()
+    {
+        StopAllCoroutines();
+        SetVisible(false);
+    }
+
+    // 循环重置：回起始窗台（A3）重新开始跳
+    public void ResetCat()
+    {
+        StopAllCoroutines();
+        currentIndex = 2;
+        transform.position = balconies[currentIndex].position + positionOffset;
+        FaceTarget();
+        SetVisible(true);
+        StartCoroutine(JumpLoop());
+    }
+
+    private void SetVisible(bool visible)
+    {
+        foreach (var r in renderers)
+            r.enabled = visible;
     }
 }
