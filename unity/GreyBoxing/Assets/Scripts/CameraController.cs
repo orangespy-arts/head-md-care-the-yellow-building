@@ -20,10 +20,10 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         if (GameManager.Instance == null) return;
-        GameMode mode = GameManager.Instance.CurrentMode;
+        GameState state = GameManager.Instance.State;
 
         Vector3 targetPos;
-        if (mode == GameMode.Screensaver)
+        if (state == GameState.Screensaver)
         {
             targetPos = defaultPosition + screensaverOffset;
 
@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            // 退出 screensaver：朝默认位置做同样的 Lerp，平滑 zoom out 回去
+            // Interactive/Dissolving/Ending 都先用默认机位（Ending 专属机位在阶段4实装）
             targetPos = defaultPosition;
         }
 

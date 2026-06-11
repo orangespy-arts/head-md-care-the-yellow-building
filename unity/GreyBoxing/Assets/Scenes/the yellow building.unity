@@ -43703,8 +43703,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b078deebcd3ed4c9d1376ab8b1828e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  idleThreshold: 20
+  idleDissolveThreshold: 45
+  allCompleteDelay: 3
   mouseMoveCountsAsActivity: 1
+  placeholderDissolveSeconds: 2
+  placeholderEndingSeconds: 2
 --- !u!4 &347186292
 Transform:
   m_ObjectHideFlags: 0
@@ -84757,9 +84760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af9afeda74f74c38a3bc46c84cde9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  kid: {fileID: 0}
-  originalPos: {x: 0, y: 0, z: 0}
-  isHeadOut: 0
 --- !u!65 &1674421304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -143122,15 +143122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa13e007675840ec80cf5b0c1ff44a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  complaints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  currentIndex: 0
 --- !u!1 &2052071987 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 559ea20f72cb26b449024238f6dd8f4d, type: 3}
