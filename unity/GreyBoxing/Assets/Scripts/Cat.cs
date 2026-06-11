@@ -7,10 +7,14 @@ public class CatController : MonoBehaviour
     [Header("窗台")]
     public Transform[] balconies;
 
+    [Header("朝向参考点")]
+    public Transform facingTarget;
+
     [Header("参数")]
     public float minStayTime = 2f;
     public float maxStayTime = 5f;
     public float jumpClipLength = 1f;
+    public float arcHeight = 3f;
     public Vector3 positionOffset = Vector3.zero;
 
     private Animator animator;
@@ -33,9 +37,18 @@ public class CatController : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         currentIndex = 2;
-        // transform.position = balconies[currentIndex].position + positionOffset;
-        transform.rotation = balconies[currentIndex].rotation;
+        transform.position = balconies[currentIndex].position + positionOffset;
+        FaceTarget();
         StartCoroutine(JumpLoop());
+    }
+
+    private void FaceTarget()
+    {
+        if (facingTarget == null) return;
+        Vector3 dir = facingTarget.position - transform.position;
+        dir.y = 0;
+        if (dir.sqrMagnitude > 0.001f)
+            transform.rotation = Quaternion.LookRotation(dir);
     }
 
     private bool IsValidJump(int from, int to)
@@ -63,12 +76,33 @@ public class CatController : MonoBehaviour
 
             int nextIndex = validTargets[Random.Range(0, validTargets.Count)];
 
-            animator.SetTrigger("DoJump");
-            yield return new WaitForSeconds(jumpClipLength);
+            // 跳跃前转向目标窗台
+            Vector3 jumpDir = balconies[nextIndex].position - transform.position;
+            jumpDir.y = 0;
+            if (jumpDir.sqrMagnitude > 0.001f)
+                transform.rotation = Quaternion.LookRotation(jumpDir);
 
+            animator.SetTrigger("DoJump");
+
+            // 抛物线位移
+            Vector3 startPos = transform.position;
+            Vector3 endPos = balconies[nextIndex].position + positionOffset;
+            float elapsed = 0f;
+
+            while (elapsed < jumpClipLength)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / jumpClipLength);
+                Vector3 flatPos = Vector3.Lerp(startPos, endPos, t);
+                flatPos.y += arcHeight * Mathf.Sin(t * Mathf.PI);
+                transform.position = flatPos;
+                yield return null;
+            }
+
+            // 落地
             currentIndex = nextIndex;
-            transform.position = balconies[currentIndex].position + positionOffset;
-            transform.rotation = balconies[currentIndex].rotation;
+            transform.position = endPos;
+            FaceTarget();
         }
     }
 }
