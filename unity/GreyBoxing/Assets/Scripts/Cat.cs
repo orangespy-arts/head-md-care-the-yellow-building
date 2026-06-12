@@ -117,6 +117,15 @@ public class CatController : MonoBehaviour
         SetVisible(false);
     }
 
+    // State4：猫出现在结尾窗台，不重启跳跃循环（由 GameManager 控制时序）
+    public void AppearAt(Transform perch)
+    {
+        StopAllCoroutines();
+        if (perch != null) transform.position = perch.position + positionOffset;
+        FaceTarget();
+        SetVisible(true);
+    }
+
     // 循环重置：回起始窗台（A3）重新开始跳
     public void ResetCat()
     {

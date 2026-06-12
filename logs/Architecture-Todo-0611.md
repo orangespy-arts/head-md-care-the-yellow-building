@@ -10,21 +10,15 @@ State3 Dissolving（自动消失）──▶ State4 Ending（zoom out·猫·变�
 
 ---
 
-## ▶️ 重启回来从这里继续（当前卡点）
+## ▶️ 重启回来从这里继续（当前焦点：阶段 5 内容与打磨）
 
-**阶段 3 测试中，消失功能没生效：** `EmptyRoomA3` 触发清空时 log 立即打出但画面没变化——**它下面没有直接子物体**（或拖错成了 Project 里的 prefab）。
+阶段 3、4 已完成，四状态循环跑通。下一步进入 **阶段 5（内容与打磨）**：
 
-回来后做：
-1. Hierarchy 检查 `EmptyRoomA3` 结构——要消失的模型必须是它的**直接子物体**：
-   ```
-   EmptyRoomA3        ← Rooms 槽位里放这个（场景实例，不是 prefab 资产）
-    ├─ messy_bed
-    ├─ table_lamp
-    └─ ...
-   ```
-2. 重跑测试（Debug Skip Screensaver 已勾、阈值 3s、手离开鼠标 3 秒）
-3. 新版 log 会自诊断：没子物体 → 黄警告；正常 → 「隐藏了 N 个子物体」
-4. 通过后 commit 阶段 3
+1. Toon Shader：舞者消失改材质淡出（替换 State3 现在的 SetActive）
+2. 音频接入（Lisa 素材）+ podcast 字幕节奏对齐
+3. Final 工程整合 + 迁移后点击失效排查
+4. 参数定稿，**关掉 Debug Skip Screensaver、idle 阈值回 45**
+5. Windows Build 全屏 + 压力测试 + 展期硬性检查
 
 ---
 
@@ -46,28 +40,28 @@ State3 Dissolving（自动消失）──▶ State4 Ending（zoom out·猫·变�
 - [x] ReportCompletion 去重防御（反复点击不重复计数）
 - [x] 验证通过：n/5 计数 + 全完成触发消失路径
 
-## 🔄 阶段 3 — State3 消失系统（代码完成，测试卡在场景搭建）
+## ✅ 阶段 3 — State3 消失系统（06-11 完成）
 
 - [x] ~~RoomContents.cs~~ **设计变更**：改为 GameManager 上 `rooms[9]`（`GameObject[]`），拖 empty 父物体，
       直接子物体按层级顺序逐个消失（`objectInterval`），房间间隔 `roomDissolveInterval` 可重叠
 - [x] 初始 active 状态记忆（本来关着的道具重置时不会被错误打开）
 - [x] Cat.cs 加 `Hide()` / `ResetCat()`
 - [x] 测试开关 `debugSkipScreensaver`（Inspector 勾选直接进 Interactive）⚠️ **上展前必须关掉 + 阈值回 45**
-- [ ] **卡点：场景里九个房间的 empty 父物体结构还没搭对**（见顶部「当前卡点」）
-- [ ] 验证消失节奏 + 连跑两圈复原正常
-- [ ] ✅ commit
+- [x] 场景里九个房间的 empty 父物体结构搭对（要消失的模型为直接子物体）
+- [x] 验证消失节奏 + 连跑两圈复原正常
+- [x] ✅ commit
 
-## 阶段 4 — State4 结尾
+## ✅ 阶段 4 — State4 结尾（06-11 完成）
 
 - [x] Lisa 的建筑已到：`DavinRoom-clean.unitypackage` 已导入（Building/EmptyRoom.prefab、Room.prefab、window-2、全套家具）
       ※ 原包是 Mac 重打包导致解压失败，已修复并剔除了危险的脚本副本和 HDRP 示例（24 个）
-- [ ] 场景搭结尾房间 + 放 `endingView`（机位空物体，含朝向）+ `endingCatPerch`（窗台猫位）
-- [ ] CameraController 加 Ending 机位（position + rotation 双 lerp）
-- [ ] Cat.cs 加 `AppearAt(perch)`
-- [ ] 变黑：GameManager 渐暗 `sunLight` + 全屏黑 Canvas（CanvasGroup，推荐，重置时无跳变）
-- [ ] ResetAll 加灯光复原 → 回 State1
-- [ ] 验证：完整四状态循环连跑 3 圈无异常
-- [ ] ✅ commit
+- [x] 场景搭结尾房间 + 放 `endingView`（机位空物体，含朝向）+ `endingCatPerch`（窗台猫位）
+- [x] CameraController 加 Ending 机位（position + rotation 双 lerp）
+- [x] Cat.cs 加 `AppearAt(perch)`
+- [x] 变黑：GameManager 渐暗 `sunLight` + 全屏黑 Canvas（CanvasGroup，重置时无跳变）
+- [x] ResetAll 加灯光复原 → 回 State1
+- [x] 验证：完整四状态循环连跑 3 圈无异常
+- [x] ✅ commit
 
 ## 阶段 5 — 内容与打磨（06-14~15）
 
@@ -92,10 +86,10 @@ State3 Dissolving（自动消失）──▶ State4 Ending（zoom out·猫·变�
 
 | 日期 | 目标 | 状态 |
 |---|---|---|
-| 06-11 | 阶段 0+1+2 ✅，阶段 3 代码 ✅ | 超前于原计划 |
-| 06-12 | 阶段 3 收尾（场景搭建）+ 阶段 4 | |
-| 06-13 | 阶段 4 收尾 + 完整循环验证 | |
-| 06-14 | 阶段 5（淡出、音频、整合） | |
+| 06-11 | 阶段 0+1+2+3+4 全部 ✅（四状态循环跑通） | 大幅超前于原计划 |
+| 06-12 | 阶段 5 起步（淡出、音频、整合） | |
+| 06-13 | 阶段 5 推进 + 完整循环验证 | |
+| 06-14 | 阶段 5（淡出、音频、整合）收尾 | |
 | 06-15 | 参数定稿 + Build + 压力测试 + 展期检查 | |
 | 06-16 | 终展 🎪 | |
 

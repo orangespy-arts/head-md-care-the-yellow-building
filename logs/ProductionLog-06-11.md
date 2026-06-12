@@ -30,8 +30,32 @@ All three call `floatingText.Hide()` in `ResetRoom()`. The dialogue is exposed a
 
 ---
 
+**State3 Dissolve system (Stage 3) — done**
+
+Finished and verified the State3 dissolve sequence. Dropped the earlier `RoomContents.cs` idea in favour of a flat `rooms[9]` (`GameObject[]`) array on GameManager: each slot holds an empty parent, and its direct children fade out one by one on `objectInterval`, with rooms staggered by `roomDissolveInterval` so they can overlap. Added initial-active-state memory so props that start disabled aren't wrongly re-enabled on reset, and gave `Cat.cs` a `Hide()` / `ResetCat()` pair. Resolved the scene-setup blocker — the nine room parents now have their disappearing models as direct children, so the dissolve actually shows on screen. Ran two full loops; everything restores cleanly.
+
+---
+
+**State4 Ending (Stage 4) — done**
+
+Built the ending room from Lisa's imported building assets and placed the `endingView` camera anchor (with orientation) plus the `endingCatPerch` on the windowsill. CameraController now has an Ending shot that lerps both position and rotation. `Cat.cs` got `AppearAt(perch)` so the cat lands on the sill. The fade-to-black dims `sunLight` and fades a full-screen black Canvas via a CanvasGroup (no jump on reset), and `ResetAll` restores the lighting before returning to State1. Verified the complete four-state loop across three consecutive runs with no anomalies.
+
+With Stages 0–4 all complete, the four-state cycle (Screensaver → Interactive → Dissolving → Ending → back) runs end to end — well ahead of the original schedule.
+
+---
+
+---
+
+**lisa**
+
+Edited and trimmed all audio assets for the project. Made visual adjustments to the scene — tweaking the overall screen image.
+
+---
+
 **Pending — June 12**
 
 - Text assets: create the TMP objects in-scene, wire references, write final French copy
 - Final project integration: click-failure issue after migration
-- Toon Shader config: change dancer disappearance to a fade-out
+- Toon Shader config: change dancer disappearance to a fade-out (upgrade of Stage 3's SetActive)
+- Audio: mount edited audio assets to rooms (OldWoman podcast 1–3, ToiletMan flush, C2 music fading with the couple's complaints)
+- Before exhibition: turn off Debug Skip Screensaver, idle threshold back to 45s; Windows build full-screen + stress test

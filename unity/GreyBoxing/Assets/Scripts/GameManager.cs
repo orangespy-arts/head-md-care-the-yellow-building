@@ -42,18 +42,23 @@ public class GameManager : MonoBehaviour
     [Header("引用")]
     public CatController cat;
 
+    [Header("State4 结尾")]
+    public Transform endingCatPerch;
+    public Light sunLight;
+    public float fadeToBlackDuration = 3f;
+    public float holdBlackDuration   = 2f;
+    public float endingCameraHold    = 3f;
+
     [Header("测试开关（上展前必须关掉）")]
     [Tooltip("勾上：跳过屏保，Play 直接进 Interactive")]
     public bool debugSkipScreensaver = false;
-
-    [Header("阶段3占位：State4 时长（阶段4实装后删除）")]
-    public float placeholderEndingSeconds = 2f;
 
     public GameState State { get; private set; } = GameState.Screensaver;
 
     private float idleTimer = 0f;
     private int enterFrame = -1;
     private Vector2 lastMousePos;
+    private float initialSunIntensity;
 
     // 房间注册/完成（阶段2接入）
     private readonly HashSet<string> registeredRooms = new HashSet<string>();
@@ -85,6 +90,8 @@ public class GameManager : MonoBehaviour
             foreach (Transform child in room.transform)
                 initialActive[child.gameObject] = child.gameObject.activeSelf;
         }
+
+        if (sunLight != null) initialSunIntensity = sunLight.intensity;
 
         if (debugSkipScreensaver) EnterInteractive();
     }
@@ -178,10 +185,29 @@ public class GameManager : MonoBehaviour
         State = GameState.Ending;
         Debug.Log("[GameManager] → Ending");
 
-        // TODO 阶段4：相机去 endingView、猫 AppearAt、变黑、黑屏重置
-        yield return new WaitForSeconds(placeholderEndingSeconds);
+        if (cat != null && endingCatPerch != null) cat.AppearAt(endingCatPerch);
+        yield return new WaitForSeconds(endingCameraHold);
+
+        yield return StartCoroutine(FadeToBlack());
+        yield return new WaitForSeconds(holdBlackDuration);
 
         ResetAll();
+    }
+
+    private IEnumerator FadeToBlack()
+    {
+        if (sunLight == null) yield break;
+
+        float elapsed        = 0f;
+        float startIntensity = sunLight.intensity;
+        while (elapsed < fadeToBlackDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t  = Mathf.Clamp01(elapsed / fadeToBlackDuration);
+            sunLight.intensity = Mathf.Lerp(startIntensity, 0f, t);
+            yield return null;
+        }
+        sunLight.intensity = 0f;
     }
 
     // 房间内子物体按层级顺序逐个消失（只动直接子物体；要整组一起消失就把它们包在一个子 empty 里）
@@ -228,7 +254,7 @@ public class GameManager : MonoBehaviour
 
         ResetAllRooms();
         if (cat != null) cat.ResetCat();
-        // TODO 阶段4：灯光复原
+        if (sunLight != null) sunLight.intensity = initialSunIntensity;
 
         State = GameState.Screensaver;
         Debug.Log("[GameManager] → Screensaver（循环重置）");
