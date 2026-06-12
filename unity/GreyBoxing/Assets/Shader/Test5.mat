@@ -29,8 +29,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AmbientStrength: 0.85
-    - _ColorVariation: 0.03
+    - _AmbientStrength: 0.45
+    - _ColorVariation: 0.1
     - _GrainScale: 6
     - _GrainStrength: 0.05
     m_Colors:

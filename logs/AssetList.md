@@ -178,7 +178,7 @@ Assets/
     ├──RoomC2/
         (no script, but interact with RoomC3)
     └──RoomC3/
-        Complain(Click this window, the couple compain the dancing people, then -2 persons in RoomC2, music become quieter till the end 0 music, after 10s reset everything)
+        Complain(Click this window, the couple compain the dancing people, then -2 persons in RoomC2, music become quieter till the end 0 music, after 10s reset everything,play the podcast to tell story)
 ```
 
 

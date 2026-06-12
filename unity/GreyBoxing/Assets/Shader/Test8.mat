@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Test1Flat
-  m_Shader: {fileID: 4800000, guid: 37856f4ae70257e44a55648832fc6686, type: 3}
+  m_Name: Test8
+  m_Shader: {fileID: 4800000, guid: 4f949ce507ba3ca44b28b63ff9c8d597, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -33,15 +33,23 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _GrainScale: 1
-    - _GrainStrength: 0
-    - _OutlineWidth: 0.002
+    - _DiffuseWrap: 0.3
+    - _GrainScale: 2
+    - _GrainStrength: 0.07
+    - _LightInfluence: 0.15
+    - _OutlineWidth: 0.004
+    - _RimSharpness: 3
+    - _RimStrength: 0.25
     - _ShadowSoftness: 0.08
-    - _ShadowStrength: 0.35
+    - _ShadowStrength: 0
     - _ShadowThreshold: 0
+    - _WatercolorScale: 2.5
+    - _WatercolorSpeed: 0.66
+    - _WatercolorStrength: 0.7
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0.34117648, g: 0.19440651, b: 0.18039216, a: 1}
-    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.26066712, g: 0.28255123, b: 0.3207546, a: 1}
+    - _RimColor: {r: 0.7574123, g: 0.4176695, b: 0.23579806, a: 1}
+    - _ShadowColor: {r: 0.64420474, g: 0.59229255, b: 0.5235248, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

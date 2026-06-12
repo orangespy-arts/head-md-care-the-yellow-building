@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Test5
-  m_Shader: {fileID: 4800000, guid: a6bd3d3043c98a3469ce90fd5f5048fa, type: 3}
-  m_Parent: {fileID: 2100000, guid: 9fcc58b9c0ee90448b262964299e3117, type: 2}
+  m_Name: Test8
+  m_Shader: {fileID: 4800000, guid: 4f949ce507ba3ca44b28b63ff9c8d597, type: 3}
+  m_Parent: {fileID: 2100000, guid: 2aa3dec513cbe9c49aaa070bb2219a11, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -20,21 +20,24 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _OcclusionMap
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _AmbientStrength: 0.57
-    - _ColorVariation: 0
-    - _GrainScale: 1
+    - _DiffuseWrap: 0.18
     - _GrainStrength: 0
+    - _OutlineWidth: 0.005
+    - _ShadowStrength: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 0.9333334, b: 0.5490196, a: 1}
+    - _OutlineColor: {r: 0.34770882, g: 0.3089079, b: 0.2507065, a: 1}
+    - _RimColor: {r: 0.19290397, g: 0.21162534, b: 0.25067383, a: 1}
+    - _ShadowColor: {r: 0.75, g: 0.78, b: 0.85, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &421143755190181510
+--- !u!114 &1809170022596893911
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

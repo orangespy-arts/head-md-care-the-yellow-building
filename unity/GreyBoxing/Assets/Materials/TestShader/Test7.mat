@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Test5
-  m_Shader: {fileID: 4800000, guid: a6bd3d3043c98a3469ce90fd5f5048fa, type: 3}
-  m_Parent: {fileID: 2100000, guid: 9fcc58b9c0ee90448b262964299e3117, type: 2}
+  m_Name: Test7
+  m_Shader: {fileID: 4800000, guid: dad23427110f91847b0043178d667df2, type: 3}
+  m_Parent: {fileID: 2100000, guid: 5d81a983de900d346be13b1a1173c51f, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -26,15 +26,16 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _AmbientStrength: 0.57
-    - _ColorVariation: 0
-    - _GrainScale: 1
-    - _GrainStrength: 0
+    - _OutlineWidth: 0.004
+    - _ShadowSoftness: 0.071
+    - _WatercolorStrength: 0.59
     m_Colors:
     - _BaseColor: {r: 1, g: 0.9333334, b: 0.5490196, a: 1}
+    - _OutlineColor: {r: 0.15506637, g: 0.1731279, b: 0.21832877, a: 1}
+    - _ShadowColor: {r: 0.75, g: 0.78, b: 0.85, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &421143755190181510
+--- !u!114 &3866770802944243595
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

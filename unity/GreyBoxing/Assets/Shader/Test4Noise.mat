@@ -33,7 +33,7 @@ Material:
     - _EdgeSharpness: 5
     - _NoiseScale: 2
     - _NoiseStrength: 0.15
-    - _Opacity: 0.9
+    - _Opacity: 1
     - _OutlineWidth: 0.004
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
