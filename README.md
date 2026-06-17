@@ -1,4 +1,4 @@
-# The Yellow Building · L'Immeuble Jaune
+<img width="1024" height="768" alt="IMG_0024" src="https://github.com/user-attachments/assets/3e9290d3-6321-433a-9857-e5fe35d83733" /># The Yellow Building · L'Immeuble Jaune
 
 > *The Yellow Building, where I live, / where I lived, / where will I live?*
 > *L'immeuble jaune, où je vis, / où je vivais, / où vais-je vivre?*
@@ -54,6 +54,18 @@ State 1  Screensaver  (loop)
 | **B3 · C1 · C2** | — | Ambient. C2 (the dancers) is driven entirely by the C3 script. |
 
 All floating text and podcast audio are in **French**. Full per-room detail is in `logs/UserJourney.md`.
+
+<img width="1024" height="768" alt="IMG_0029" src="https://github.com/user-attachments/assets/1cdf0296-9b94-4a9e-8636-d4ba10e3aaa1" />
+<img width="1024" height="768" alt="IMG_0028" src="https://github.com/user-attachments/assets/eed63b7c-5b32-4d65-8b73-0e5c0a514c8c" />
+<img width="1024" height="768" alt="IMG_0023" src="https://github.com/user-attachments/assets/5f3f791f-2c89-4651-a92f-b18aaf97b79b" />
+<img width="1024" height="768" alt="IMG_0024" src="https://github.com/user-attachments/assets/301e4bf4-7194-411e-8de7-102e5ba6bf34" />
+<img width="1024" height="768" alt="IMG_0025" src="https://github.com/user-attachments/assets/6fe326dd-c765-4447-b653-b342db59cd1b" />
+<img width="1024" height="768" alt="IMG_0026" src="https://github.com/user-attachments/assets/9ec8e47b-04b7-485c-96d7-263d7ea49068" />
+<img width="1024" height="768" alt="IMG_0031" src="https://github.com/user-attachments/assets/3f091554-b408-4b47-bb22-9dc1ef933f51" />
+<img width="1024" height="768" alt="IMG_0027" src="https://github.com/user-attachments/assets/3817ee95-0dc0-4e02-9ac9-e51ff3c7a39c" />
+<img width="1024" height="768" alt="IMG_0030" src="https://github.com/user-attachments/assets/55d3794a-383e-4337-94fd-9b6c40b73433" />
+
+
 
 ---
 
