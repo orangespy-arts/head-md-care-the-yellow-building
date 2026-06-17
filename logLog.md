@@ -1,4 +1,4 @@
-# Development Log — The Yellow Building
+# Log — The Yellow Building
 
 This log documents the key milestones and decision points in the development of the project. Each entry reflects a significant moment in the conceptual, narrative, or technical progression of the work.
 
