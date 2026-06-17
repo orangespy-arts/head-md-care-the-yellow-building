@@ -5,23 +5,25 @@
 
 ## About
 
-A tablet based interactive story about an old yellow building on the last day before it is demolished. Visitors look across at the building through a neighbouring window, peering into nine lit rooms and their inhabitants.
+A tablet based interactive story about an old yellow building on the last day before it is demolished. Visitors look across at the building through a neighbouring window, peering into nine lit rooms as the residents prepare for their final night.
 
-This work was created as part of the [Master Media Design](https://www.hesge.ch/head/formations-recherche/master-en-media-design) at [HEAD – Genève](https://www.hesge.ch/head/) in collaboration with zhanlan & lisa.
+This work was created as part of the [Master Media Design](https://www.hesge.ch/head/formations-recherche/master-en-media-design) at [HEAD – Genève](https://www.hesge.ch/head/) in collaboration with **zhanlan** and **lisa**.
 
 <img width="1024" height="768" alt="IMG_0022" src="https://github.com/user-attachments/assets/9bb967fb-d80f-44e2-97aa-8c6d7f91bf44" />
+
 ---
 
 ## Concept
 
-It is the last day of the old yellow building. Tomorrow it will be torn down by greedy landlords. The people who have spent their lives here take care of their homes one final time — repairing, cleaning, packing what they can.
+It is the last day of the old yellow building. Tomorrow it will be torn down by greedy landlords. The people who have spent their lives here take care of their homes one final time — repairing, cleaning, packing, saying goodbye to walls that hold their memories.
 
-The piece asks a simple question: *if this building is demolished, what happens to the memories of the people who lived here?* Rather than tell that story head-on, the installation lets a visitor peek into the intimate moments and routines of five residents as they say goodbye.
+The piece asks a simple question: *if this building is demolished, what happens to the memories of the people who lived here?* Rather than tell that story head-on, the installation lets a visitor peek into the building and experience the residents' rituals in fragmentary, semi-autonomous vignettes — snippets of lives captured in moments of care.
 
-See `logs/Intentions.md` and `logs/Narrative.md` for the full intention and narrative notes.
+See [`logs/Intentions.md`](logs/Intentions.md) for the full intention and narrative notes.
 
-[Process PDF](https://github.com/orangespy-arts/head-md-care-the-yellow-building/blob/main/media/2026-06-12-head-mmd1-care-Zhanlan-Lisa-Davin.pdf)
+[**View Process PDF**](https://github.com/orangespy-arts/head-md-care-the-yellow-building/blob/main/media/2026-06-12-head-mmd1-care-Zhanlan-Lisa-Davin.pdf)
 
+---
 
 ## The Experience
 
@@ -54,7 +56,7 @@ State 1  Screensaver  (loop)
 | **C3** | Couple | Click → they complain about the dancers next door; each click removes dancers from **C2** and lowers its music, until C2 is silent. Resets after 10s. |
 | **B3 · C1 · C2** | — | Ambient. C2 (the dancers) is driven entirely by the C3 script. |
 
-All floating text and podcast audio are in **French**. Full per-room detail is in `logs/UserJourney.md`.
+All floating text and podcast audio are in **French**. Full per-room detail is in [`logs/UserJourney.md`](logs/UserJourney.md).
 
 ### Gallery
 
@@ -96,14 +98,13 @@ All floating text and podcast audio are in **French**. Full per-room detail is i
 
 | File | Contents |
 |------|----------|
-| `Architecture-Todo-0611.md` | The four-state architecture and the live build TODO — **read this first when resuming work.** |
-| `UserJourney.md` | State-by-state and room-by-room walkthrough of the visitor experience. |
-| `Production-plan-v9.md` | Latest production plan, team responsibilities, and day-by-day schedule. |
-| `Intentions.md` / `Narrative.md` | Story intention and narrative design. |
-| `AssetList.md` | Full asset hierarchy (animations, models, sounds, texts, scripts). |
-| `Style.md` | Visual style reference (Unity Toon Shader). |
-| `ProductionLog-06-*.md`, `logs.md` | Daily production journal. |
-| `credit-furniture.md` | Third-party asset credits and licenses. |
+| [`UserJourney.md`](logs/UserJourney.md) | State-by-state and room-by-room walkthrough of the visitor experience. |
+| [`Intentions.md`](logs/Intentions.md) | Story intention and narrative design. |
+| [`AssetList.md`](logs/AssetList.md) | Full asset hierarchy (animations, models, sounds, texts, scripts). |
+| [`Style.md`](logs/Style.md) | Visual style reference (Unity Toon Shader). |
+| [`ProductionLog-06-*.md`](logs/) | Daily production journal (06-01 through 06-15). |
+| [`Log.md`](logs/Log.md) | Complete project milestone timeline. |
+| [`credit-3Dmodel.md`](logs/credit-3Dmodel.md) | Third-party 3D asset credits and licenses. |
 
 ---
 
@@ -114,7 +115,7 @@ All floating text and podcast audio are in **French**. Full per-room detail is i
 
 **Architecture highlights:**
 
-- `GameManager` — owns the `GameState` enum (`Screensaver / Interactive / Dissolving / Ending`), the idle timeout, completion tracking with deduplication, the `rooms[9]` dissolve array, and the fade loop.
+- `GameManager` — owns the `GameState` enum (`Screensaver / Interactive / Dissolving / Ending`), the idle timeout, completion tracking with deduplication, the `rooms[9]` dissolve array, and the fade-in/fade-out of the UI.
 - `CameraController` — screensaver cat-follow push-in, smooth zoom-out on exit, and the dual position/rotation lerp into the ending shot.
 - `FloatingText` — world-space TextMeshPro labels with `ShowLine` / `ShowSequence` / `Hide`; dialogue is exposed as `[TextArea] string[]` so French copy can be entered without touching code.
 - Rooms implement a shared resettable interface so the whole installation can return cleanly to State 1 on every loop.
@@ -144,10 +145,8 @@ All floating text and podcast audio are in **French**. Full per-room detail is i
 | **zhanlan** | Character modelling, rigging & animation, interaction scripts, text assets, four-state game architecture, dissolve & ending systems. |
 | **lisa** | Furniture & scene assembly, building materials/textures, exterior props, lighting, sound import & mounting, toon shaders. |
 
-See `logs/Production-plan-v9.md` for the full breakdown.
-
 ---
 
 ## Credits
 
-Third-party models are used under Creative Commons Attribution licenses — full attributions in `logs/credit-furniture.md`.
+Third-party models are used under Creative Commons Attribution licenses — full attributions in [`logs/credit-3Dmodel.md`](logs/credit-3Dmodel.md).
