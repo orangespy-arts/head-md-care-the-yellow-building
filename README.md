@@ -1,4 +1,4 @@
-<img width="1024" height="768" alt="IMG_0024" src="https://github.com/user-attachments/assets/3e9290d3-6321-433a-9857-e5fe35d83733" /># The Yellow Building · L'Immeuble Jaune
+# The Yellow Building · L'Immeuble Jaune
 
 > *The Yellow Building, where I live, / where I lived, / where will I live?*
 > *L'immeuble jaune, où je vis, / où je vivais, / où vais-je vivre?*
@@ -64,6 +64,8 @@ All floating text and podcast audio are in **French**. Full per-room detail is i
 <img width="1024" height="768" alt="IMG_0031" src="https://github.com/user-attachments/assets/3f091554-b408-4b47-bb22-9dc1ef933f51" />
 <img width="1024" height="768" alt="IMG_0027" src="https://github.com/user-attachments/assets/3817ee95-0dc0-4e02-9ac9-e51ff3c7a39c" />
 <img width="1024" height="768" alt="IMG_0030" src="https://github.com/user-attachments/assets/55d3794a-383e-4337-94fd-9b6c40b73433" />
+<img width="1024" height="768" alt="IMG_0024" src="https://github.com/user-attachments/assets/3e9290d3-6321-433a-9857-e5fe35d83733" />
+
 
 
 
