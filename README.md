@@ -15,7 +15,12 @@ This work was created as part of the [Master Media Design](https://www.hesge.ch/
 
 ## Concept
 
-It is the last day of the old yellow building. Tomorrow it will be torn down by greedy landlords. The people who have spent their lives here take care of their homes one final time — repairing, cleaning, packing, saying goodbye to walls that hold their memories.
+This piece starts from a real window. Davin, a member of our team, lives across from the Immeuble Place des Augustins in Geneva, and the daily habit was simply to look out at the lit windows opposite, catching fragments of lives belonging to people whose names you never learn. The tablet based interactive story rebuilds that vantage point: you stand where Davin stands, looking across through a neighbouring window into nine lit rooms. It is an autoethnographic work, built from the ordinary position of the witness across the street.
+
+What you find when you look in is a building full of life. A man works late. A child lies shyly against the bed, and if you click him he peeks out to say hi. An old woman makes a phone call. A couple bickers with the dancers next door. Nothing here is exceptional. These are ordinary, everyday moments, the small texture of nine representative lives held inside one structure, a cross-section of the different kinds of people a building like this holds. This is not only the story of one yellow building that may face demolition. It is a single case standing in for a wider phenomenon: the disruption that demolition and displacement bring to Geneva.
+
+A cat moves through all of it, crossing balconies, slipping between windows. It belongs to everyone and to no one, the social thread that ties nine separate rooms into one community.
+If this building were torn demolished, the residents would leave, one by one. The rooms would empty out, room by room, until the building stood hollow. The cat would have nowhere left to go. Were its home demolished, it might cross the street to the observer's building, where you have been watching all along. The community would be gone, the view from your window gone with it.
 
 The piece asks a simple question: *if this building is demolished, what happens to the memories of the people who lived here?* Rather than tell that story head-on, the installation lets a visitor peek into the building and experience the residents' rituals in fragmentary, semi-autonomous vignettes — snippets of lives captured in moments of care.
 
