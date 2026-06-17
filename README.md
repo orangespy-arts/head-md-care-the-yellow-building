@@ -3,8 +3,11 @@
 > *The Yellow Building, where I live, / where I lived, / where will I live?*
 > *L'immeuble jaune, où je vis, / où je vivais, / où vais-je vivre?*
 
+## About
 
 A tablet based interactive story about an old yellow building on the last day before it is demolished. Visitors look across at the building through a neighbouring window, peering into nine lit rooms and encountering the people inside.
+
+This work was created as part of the [Master Media Design](https://www.hesge.ch/head/formations-recherche/master-en-media-design) at [HEAD – Genève](https://www.hesge.ch/head/) in collaboration with [Bibliothèques de Genève](https://www.geneve.ch/themes/culture/bibliotheques).
 
 <img width="1024" height="768" alt="IMG_0022" src="https://github.com/user-attachments/assets/9bb967fb-d80f-44e2-97aa-8c6d7f91bf44" />
 ---
@@ -121,12 +124,6 @@ All floating text and podcast audio are in **French**. Full per-room detail is i
 | **lisa** | Furniture & scene assembly, building materials/textures, exterior props, lighting, sound import & mounting, toon shaders. |
 
 See `logs/Production-plan-v9.md` for the full breakdown.
-
----
-
-## About
-
-This work was created as part of the [Master Media Design](https://www.hesge.ch/head/formations-recherche/master-en-media-design) at [HEAD – Genève](https://www.hesge.ch/head/) in collaboration with [Bibliothèques de Genève](https://www.geneve.ch/themes/culture/bibliotheques).
 
 ---
 
