@@ -4,16 +4,16 @@
 > *L'immeuble jaune, où je vis, / où je vivais, / où vais-je vivre?*
 
 
-A tablet based interactive story about an old yellow building on the last day before it is demolished. Visitors look across at the building through a neighbouring window, peering into nine lit rooms and the small rituals of the people inside — until, one by one, the rooms dissolve and the building empties itself into the dark.
+A tablet based interactive story about an old yellow building on the last day before it is demolished. Visitors look across at the building through a neighbouring window, peering into nine lit rooms and encountering the people inside.
 
 <img width="1024" height="768" alt="IMG_0022" src="https://github.com/user-attachments/assets/9bb967fb-d80f-44e2-97aa-8c6d7f91bf44" />
 ---
 
 ## Concept
 
-It is the last day of the old yellow building. Tomorrow it will be torn down by greedy landlords. The people who have spent their lives here take care of their homes one final time — repairing, cleaning, arranging flowers — even knowing everything will disappear the next day.
+It is the last day of the old yellow building. Tomorrow it will be torn down by greedy landlords. The people who have spent their lives here take care of their homes one final time — repairing, cleaning, organising, grieving.
 
-The piece asks a simple question: *if this building is demolished, what happens to the memories of the people who lived here?* Rather than tell that story head-on, the installation lets a visitor poke at the building's windows and watch its inhabitants react, then quietly takes it all away.
+The piece asks a simple question: *if this building is demolished, what happens to the memories of the people who lived here?* Rather than tell that story head-on, the installation lets a visitor poke around inside, click on people, and piece together their lives from interaction alone.
 
 See `logs/Intentions.md` and `logs/Narrative.md` for the full intention and narrative notes.
 
@@ -86,11 +86,11 @@ All floating text and podcast audio are in **French**. Full per-room detail is i
 ## Technical Overview
 
 - **Engine:** Unity **6000.3.15f1** (Unity 6), URP, new Input System, Unity Toon Shader.
-- **Two projects:** the state-machine **core** (GameManager, CameraController, Cat, FloatingText, per-room controllers) was authored in `GreyBoxing/` and is being migrated into `FinalYellowBuilding/` for the exhibition build.
+- **Two projects:** the state-machine **core** (GameManager, CameraController, Cat, FloatingText, per-room controllers) was authored in `GreyBoxing/` and is being migrated into `FinalYellowBuilding/`.
 
 **Architecture highlights:**
 
-- `GameManager` — owns the `GameState` enum (`Screensaver / Interactive / Dissolving / Ending`), the idle timeout, completion tracking with deduplication, the `rooms[9]` dissolve array, and the fade-to-black + reset cycle.
+- `GameManager` — owns the `GameState` enum (`Screensaver / Interactive / Dissolving / Ending`), the idle timeout, completion tracking with deduplication, the `rooms[9]` dissolve array, and the fade.
 - `CameraController` — screensaver cat-follow push-in, smooth zoom-out on exit, and the dual position/rotation lerp into the ending shot.
 - `FloatingText` — world-space TextMeshPro labels with `ShowLine` / `ShowSequence` / `Hide`; dialogue is exposed as `[TextArea] string[]` so French copy can be entered without touching code.
 - Rooms implement a shared resettable interface so the whole installation can return cleanly to State 1 on every loop.
@@ -121,6 +121,12 @@ All floating text and podcast audio are in **French**. Full per-room detail is i
 | **lisa** | Furniture & scene assembly, building materials/textures, exterior props, lighting, sound import & mounting, toon shaders. |
 
 See `logs/Production-plan-v9.md` for the full breakdown.
+
+---
+
+## About
+
+This work was created as part of the [Master Media Design](https://www.hesge.ch/head/formations-recherche/master-en-media-design) at [HEAD – Genève](https://www.hesge.ch/head/) in collaboration with [Bibliothèques de Genève](https://www.geneve.ch/themes/culture/bibliotheques).
 
 ---
 
