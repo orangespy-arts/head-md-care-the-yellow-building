@@ -5,18 +5,18 @@
 
 ## About
 
-A tablet based interactive story about an old yellow building on the last day before it is demolished. Visitors look across at the building through a neighbouring window, peering into nine lit rooms and encountering the people inside.
+A tablet based interactive story about an old yellow building on the last day before it is demolished. Visitors look across at the building through a neighbouring window, peering into nine lit rooms and their inhabitants.
 
-This work was created as part of the [Master Media Design](https://www.hesge.ch/head/formations-recherche/master-en-media-design) at [HEAD – Genève](https://www.hesge.ch/head/) in collaboration with [Bibliothèques de Genève](https://www.geneve.ch/themes/culture/bibliotheques).
+This work was created as part of the [Master Media Design](https://www.hesge.ch/head/formations-recherche/master-en-media-design) at [HEAD – Genève](https://www.hesge.ch/head/) in collaboration with zhanlan & lisa.
 
 <img width="1024" height="768" alt="IMG_0022" src="https://github.com/user-attachments/assets/9bb967fb-d80f-44e2-97aa-8c6d7f91bf44" />
 ---
 
 ## Concept
 
-It is the last day of the old yellow building. Tomorrow it will be torn down by greedy landlords. The people who have spent their lives here take care of their homes one final time — repairing, cleaning, organising, grieving.
+It is the last day of the old yellow building. Tomorrow it will be torn down by greedy landlords. The people who have spent their lives here take care of their homes one final time — repairing, cleaning, packing what they can.
 
-The piece asks a simple question: *if this building is demolished, what happens to the memories of the people who lived here?* Rather than tell that story head-on, the installation lets a visitor poke around inside, click on people, and piece together their lives from interaction alone.
+The piece asks a simple question: *if this building is demolished, what happens to the memories of the people who lived here?* Rather than tell that story head-on, the installation lets a visitor peek into the intimate moments and routines of five residents as they say goodbye.
 
 See `logs/Intentions.md` and `logs/Narrative.md` for the full intention and narrative notes.
 
@@ -55,19 +55,25 @@ State 1  Screensaver  (loop)
 
 All floating text and podcast audio are in **French**. Full per-room detail is in `logs/UserJourney.md`.
 
-<img width="1024" height="768" alt="IMG_0029" src="https://github.com/user-attachments/assets/1cdf0296-9b94-4a9e-8636-d4ba10e3aaa1" />
-<img width="1024" height="768" alt="IMG_0028" src="https://github.com/user-attachments/assets/eed63b7c-5b32-4d65-8b73-0e5c0a514c8c" />
-<img width="1024" height="768" alt="IMG_0023" src="https://github.com/user-attachments/assets/5f3f791f-2c89-4651-a92f-b18aaf97b79b" />
-<img width="1024" height="768" alt="IMG_0024" src="https://github.com/user-attachments/assets/301e4bf4-7194-411e-8de7-102e5ba6bf34" />
-<img width="1024" height="768" alt="IMG_0025" src="https://github.com/user-attachments/assets/6fe326dd-c765-4447-b653-b342db59cd1b" />
-<img width="1024" height="768" alt="IMG_0026" src="https://github.com/user-attachments/assets/9ec8e47b-04b7-485c-96d7-263d7ea49068" />
-<img width="1024" height="768" alt="IMG_0031" src="https://github.com/user-attachments/assets/3f091554-b408-4b47-bb22-9dc1ef933f51" />
-<img width="1024" height="768" alt="IMG_0027" src="https://github.com/user-attachments/assets/3817ee95-0dc0-4e02-9ac9-e51ff3c7a39c" />
-<img width="1024" height="768" alt="IMG_0030" src="https://github.com/user-attachments/assets/55d3794a-383e-4337-94fd-9b6c40b73433" />
-<img width="1024" height="768" alt="IMG_0024" src="https://github.com/user-attachments/assets/3e9290d3-6321-433a-9857-e5fe35d83733" />
+### Gallery (3×3 grid)
 
-
-
+<table>
+<tr>
+<td><img width="340" height="256" alt="IMG_0029" src="https://github.com/user-attachments/assets/1cdf0296-9b94-4a9e-8636-d4ba10e3aaa1" /></td>
+<td><img width="340" height="256" alt="IMG_0028" src="https://github.com/user-attachments/assets/eed63b7c-5b32-4d65-8b73-0e5c0a514c8c" /></td>
+<td><img width="340" height="256" alt="IMG_0023" src="https://github.com/user-attachments/assets/5f3f791f-2c89-4651-a92f-b18aaf97b79b" /></td>
+</tr>
+<tr>
+<td><img width="340" height="256" alt="IMG_0024" src="https://github.com/user-attachments/assets/301e4bf4-7194-411e-8de7-102e5ba6bf34" /></td>
+<td><img width="340" height="256" alt="IMG_0025" src="https://github.com/user-attachments/assets/6fe326dd-c765-4447-b653-b342db59cd1b" /></td>
+<td><img width="340" height="256" alt="IMG_0026" src="https://github.com/user-attachments/assets/9ec8e47b-04b7-485c-96d7-263d7ea49068" /></td>
+</tr>
+<tr>
+<td><img width="340" height="256" alt="IMG_0031" src="https://github.com/user-attachments/assets/3f091554-b408-4b47-bb22-9dc1ef933f51" /></td>
+<td><img width="340" height="256" alt="IMG_0027" src="https://github.com/user-attachments/assets/3817ee95-0dc0-4e02-9ac9-e51ff3c7a39c" /></td>
+<td><img width="340" height="256" alt="IMG_0030" src="https://github.com/user-attachments/assets/55d3794a-383e-4337-94fd-9b6c40b73433" /></td>
+</tr>
+</table>
 
 ---
 
@@ -107,7 +113,7 @@ All floating text and podcast audio are in **French**. Full per-room detail is i
 
 **Architecture highlights:**
 
-- `GameManager` — owns the `GameState` enum (`Screensaver / Interactive / Dissolving / Ending`), the idle timeout, completion tracking with deduplication, the `rooms[9]` dissolve array, and the fade.
+- `GameManager` — owns the `GameState` enum (`Screensaver / Interactive / Dissolving / Ending`), the idle timeout, completion tracking with deduplication, the `rooms[9]` dissolve array, and the fade loop.
 - `CameraController` — screensaver cat-follow push-in, smooth zoom-out on exit, and the dual position/rotation lerp into the ending shot.
 - `FloatingText` — world-space TextMeshPro labels with `ShowLine` / `ShowSequence` / `Hide`; dialogue is exposed as `[TextArea] string[]` so French copy can be entered without touching code.
 - Rooms implement a shared resettable interface so the whole installation can return cleanly to State 1 on every loop.
