@@ -9,6 +9,8 @@ A tablet based interactive story about an old yellow building on the last day be
 
 This work was created as part of the [Master Media Design](https://www.hesge.ch/head/formations-recherche/master-en-media-design) at [HEAD – Genève](https://www.hesge.ch/head/) in collaboration with **zhanlan** and **lisa**.
 
+[Video](https://www.youtube.com/watch?v=MaAW-jc2R4E)
+
 <img width="1024" height="768" alt="IMG_0022" src="https://github.com/user-attachments/assets/9bb967fb-d80f-44e2-97aa-8c6d7f91bf44" />
 
 ---
