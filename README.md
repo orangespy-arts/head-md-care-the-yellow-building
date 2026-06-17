@@ -21,7 +21,7 @@ The piece asks a simple question: *if this building is demolished, what happens 
 See `logs/Intentions.md` and `logs/Narrative.md` for the full intention and narrative notes.
 
 [Process PDF](https://github.com/orangespy-arts/head-md-care-the-yellow-building/blob/main/media/2026-06-12-head-mmd1-care-Zhanlan-Lisa-Davin.pdf)
----
+
 
 ## The Experience
 
