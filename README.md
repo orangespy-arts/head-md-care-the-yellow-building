@@ -149,6 +149,7 @@ All floating text and podcast audio are in **French**. Full per-room detail is i
 |---|---|
 | **zhanlan** | Character modelling, rigging & animation, interaction scripts, text assets, four-state game architecture, dissolve & ending systems. |
 | **lisa** | Furniture & scene assembly, building materials/textures, exterior props, lighting, sound import & mounting, toon shaders. |
+| **davin** | Interview and communicate with people, field research and observation. |
 
 ---
 
