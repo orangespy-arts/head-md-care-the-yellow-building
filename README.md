@@ -3,10 +3,10 @@
 > *The Yellow Building, where I live, / where I lived, / where will I live?*
 > *L'immeuble jaune, où je vis, / où je vivais, / où vais-je vivre?*
 
+
 A tablet based interactive story about an old yellow building on the last day before it is demolished. Visitors look across at the building through a neighbouring window, peering into nine lit rooms and the small rituals of the people inside — until, one by one, the rooms dissolve and the building empties itself into the dark.
 
-**Status:** in production for a final exhibition on **June 16, 2026**.
-
+<img width="1024" height="768" alt="IMG_0022" src="https://github.com/user-attachments/assets/9bb967fb-d80f-44e2-97aa-8c6d7f91bf44" />
 ---
 
 ## Concept
