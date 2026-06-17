@@ -55,7 +55,7 @@ State 1  Screensaver  (loop)
 
 All floating text and podcast audio are in **French**. Full per-room detail is in `logs/UserJourney.md`.
 
-### Gallery (3×3 grid)
+### Gallery
 
 <table>
 <tr>
