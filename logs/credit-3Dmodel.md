@@ -1,4 +1,4 @@
-# Credit Furniture
+# Credit 3D Model
 
 ## in use
 - "Desktop Computer" (https://skfb.ly/6RCNx) by Tytan is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
