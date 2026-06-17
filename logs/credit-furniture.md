@@ -52,8 +52,6 @@
 - "Geranium Flowering Plants Free" (https://skfb.ly/pI87N) by Nicholas-3D is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 - "Optimized Potted Plants" (https://skfb.ly/oSYU7) by Nicholas-3D is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 - "Wisteria brachybotrys 03" (https://skfb.ly/oWDtF) by André Murrugarra is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-
-
-
+- "Fully Animated Cats" (https://assetstore.unity.com/packages/3d/characters/animals/mammals/fully-animated-cats-185493) from Unity Asset Store.
 
 -"CC0 - Awning" (https://skfb.ly/oUVFy) by plaggy is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
